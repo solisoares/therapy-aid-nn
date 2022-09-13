@@ -7,7 +7,7 @@ from configparser import ConfigParser
 
 try:
     config = ConfigParser()
-    cfg = os.path.join(os.path.dirname(__file__), 'cfg/detect.cfg')
+    cfg = os.path.join(os.path.dirname(__file__), 'cfg/yolo_home.cfg')
     config.read(cfg)
     sys.path.append(config.get('yolov5', 'home'))
     from yolov5 import detect
@@ -18,6 +18,8 @@ except:
 
 if __name__ == "__main__":
     # Get detect.cfg configurations
+    cfg = os.path.join(os.path.dirname(__file__), 'cfg/detect.cfg')
+    config.read(cfg)
     data = config.get('load', 'data')
     weights = config.get('load', 'weights')
     source = config.get('load', 'source')
