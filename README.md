@@ -6,21 +6,20 @@ This repository serves as an isolated place to train, validate and test NNs that
 
 ## Install
 
-1. Clone YOLOv5 and annotate its home location.
+1. Clone YOLOv5 and annotate its path.
 2. Clone this repo and install its requirements.
-    1. Update YOLOv5 `home` variable in the config files (manually or using the code below)
+    1. Update YOLOv5 `path` variable in the config file.
 
 ```bash
 # Clone YOLOv5 and store its home location since it is not pip installable
 git clone https://github.com/ultralytics/yolov5.git
-yolo_home=$(pwd)
 
 # Clone and install this repo
 git clone https://github.com/ASDDataMining/therapy-aid-nn.git
 cd therapy-aid-nn
-# python3 -m venv .venv; source .venv/bin/activate
+# python3 -m venv venv; source venv/bin/activate  # optional: python virtual environment
 pip install -r requirements.txt
-# sed -i "s|home = \/home\/alexandre|home = $yolo_home|" cfg/yolo_home.cfg
+# Then go to cfg/yolo_location.cfg and change yolov5's path
 ```
 
 ## Usage
