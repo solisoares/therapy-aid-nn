@@ -2,14 +2,17 @@
 # It assumes YOLO's home location is in the configuration files
 
 import os
+from pathlib import Path
 import sys
 from configparser import ConfigParser
 
 try:
     config = ConfigParser()
-    cfg = os.path.join(os.path.dirname(__file__), 'cfg/yolo_home.cfg')
+    cfg = os.path.join(os.path.dirname(__file__), 'cfg/yolo_location.cfg')
     config.read(cfg)
-    sys.path.append(config.get('yolov5', 'home'))
+    yolo_path = Path(config.get('yolov5', 'path'))
+    yolo_home = yolo_path.parent
+    sys.path.append(str(yolo_home))
     from yolov5 import detect
 except:
     print("Could not find YOLOv5! Make sure you provide its home path in the configuration file.")
