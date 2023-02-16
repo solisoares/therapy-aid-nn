@@ -95,7 +95,7 @@ if __name__ == '__main__':
     try:
         LABELBOX_API = os.environ.get('LABELBOX_API')
     except:
-        print("--- You need to create a \".env\" file in the project root ---")
+        print("--- You need to create a \".env\" file in the project root with \"LABELBOX_API=<your-labelbox-api-key>\" ---")
     PROJECT_ID = ... # add project ID
     out_path = 'datasets/downloaded'
     download_images_and_labels(LABELBOX_API, PROJECT_ID, out_path)
