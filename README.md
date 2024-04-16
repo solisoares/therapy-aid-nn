@@ -1,6 +1,8 @@
-# Train, Validate an Test Neural Nets for Autism Spectrum Disorder
+# Repository used to Train and Test Neural Nets for Autism Spectrum Disorder (detects Therapist, Toddler and Teddy Bear)
 
-This repository serves as an isolated place to train, validate and test NNs that are being used in the web app [repository](https://github.com/ASDDataMining/therapy-aid-tool). For now, it uses [YOLOv5]() to detect interactions between actors in a ASD therapy session.
+:warning: This repository is incomplete, some expected features are not here, like validation.
+
+:warning: This repository served as an isolated place to train and test NNs that are being used in the web app [repository](https://github.com/ASDDataMining/therapy-aid-tool). For now, it uses [YOLOv5](https://github.com/ultralytics/yolov5) to detect interactions between actors in a ASD therapy session.
 
 
 
@@ -23,6 +25,6 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-* After installation you can adjust the configuration files to your needs and run any of the corresponding `.py` files: `train.py`, `val.py` and `detect.py`.
+* After installation you can adjust the configuration files to your needs and run any of the corresponding `.py` files: `train.py` and `detect.py`.
 * If wandb was installed correctly you can make logs in it
 * For downloading labelbox images with the script provided you must create a `.env` file at the repo top-level and edit `LABELBOX_API=<your-labelbox-api>`.
